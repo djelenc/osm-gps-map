@@ -29,6 +29,8 @@ osm_gps_map_source_get_friendly_name(OsmGpsMapSource_t source)
             return "None";
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP:
             return "OpenStreetMap I";
+        case OSM_GPS_MAP_SOURCE_SALUS:
+            return "Maps used in SALUS provided by Fraunhofer";
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP_RENDERER:
             return "OpenStreetMap II";
         case OSM_GPS_MAP_SOURCE_OPENAERIALMAP:
@@ -66,6 +68,7 @@ osm_gps_map_source_get_copyright(OsmGpsMapSource_t source)
     switch(source)
     {
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP:
+        case OSM_GPS_MAP_SOURCE_SALUS:
             // https://www.openstreetmap.org/copyright
             return "© OpenStreetMap contributors";
         case OSM_GPS_MAP_SOURCE_OPENCYCLEMAP:
@@ -115,6 +118,7 @@ osm_gps_map_source_get_repo_uri(OsmGpsMapSource_t source)
             // return "http://tah.openstreetmap.org/Tiles/tile/#Z/#X/#Y.png";
             return NULL;
         case OSM_GPS_MAP_SOURCE_OPENCYCLEMAP:
+        case OSM_GPS_MAP_SOURCE_SALUS:
             // return "http://c.andy.sandbox.cloudmade.com/tiles/cycle/#Z/#X/#Y.png";
             return "http://b.tile.opencyclemap.org/cycle/#Z/#X/#Y.png";
         case OSM_GPS_MAP_SOURCE_OSM_PUBLIC_TRANSPORT:
@@ -151,6 +155,7 @@ osm_gps_map_source_get_image_format(OsmGpsMapSource_t source)
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP:
         case OSM_GPS_MAP_SOURCE_OPENSTREETMAP_RENDERER:
         case OSM_GPS_MAP_SOURCE_OPENCYCLEMAP:
+        case OSM_GPS_MAP_SOURCE_SALUS:
         case OSM_GPS_MAP_SOURCE_OSM_PUBLIC_TRANSPORT:
         case OSM_GPS_MAP_SOURCE_OSMC_TRAILS:
             return "png";
